@@ -101,7 +101,7 @@ class HealthContainer extends Component {
         }
       })
     )
-    .then(window.location = '/')
+
   }
   deleteTreatment(id){
     TreatmentsAdapter.destroy(id)

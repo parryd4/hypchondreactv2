@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div  >
           <Link to="/"><h2 className="ribbon">HypochondReact</h2></Link>
         </div>
 

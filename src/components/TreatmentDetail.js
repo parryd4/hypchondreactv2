@@ -25,7 +25,7 @@ export default function TreatmentDetail({treatment, deleteTreatment,voteMethod})
         <Link to={`${treatment.id}/edit`}  className="btn btn-primary">Edit</Link>
         </div>
         <div className="col-sm-4">
-      <button className="btn btn-primary" onClick={() => deleteTreatment(treatment.id) }>Delete</button>
+        <Link to="/"><p className="btn btn-primary" onClick={() => deleteTreatment(treatment.id) }>Delete</p></Link>
       </div>
       </div>
 
