@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import HealthContainer from '../containers/HealthContainer'
 // import NavBar from './NavBar'
 
@@ -7,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <h2 className="ribbon">HypochondReact</h2>
+          <Link to="/"><h2 className="ribbon">HypochondReact</h2></Link>
         </div>
 
         <HealthContainer />

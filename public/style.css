@@ -16,6 +16,13 @@
 #symptoms {
   max-height: 45vH;
   overflow: scroll;
+  left: 22%
+}
+
+#top_half {
+  min-height: 40vH;
+  overflow: scroll;
+  
 }
 
 .main {

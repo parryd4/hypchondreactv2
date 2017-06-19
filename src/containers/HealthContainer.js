@@ -132,8 +132,8 @@ class HealthContainer extends Component {
   render() {
   //  console.log(this.state.allTreatments.length)
     return (
-    <div className="col-md-12 flow">
-        <div className="row main">
+      <div className="col-md-12 flow">
+        <div className="row main" id="top_half">
             <div className="col-md-5 col-md-offset-3 text-center">
             <Switch>
             <Route exact path='/new' render={() => <TreatmentForm createTreatment={this.createTreatment}/>} />
@@ -153,7 +153,7 @@ class HealthContainer extends Component {
                 return <TreatmentForm treatment={treatment} updateTreatment={this.updateTreatment} />
               }} />
 
-              <Route exact path='/' render={()=> <div><strong>Welcome to HypochondReact. Please select treatment below!</strong></div>} />
+              <Route exact path='/' render={()=> <div style={{margin: "150px"}}><strong>Welcome to HypochondReact. Please select treatment below!</strong></div>} />
             </Switch>
           </div>
         </div>
@@ -161,7 +161,7 @@ class HealthContainer extends Component {
         <div className="row"><div className="col-md-12 border"><p></p></div></div>
         <br />
         <div className="row list">
-        <div id="symptoms" className="col-md-6 list" styles={{float : "right"}}>
+        <div id="symptoms" className="col-md-6 list" style={{float:'center'}}>
             <div className="row">
               <div className="col-md-3">
                 <Bodyparts filterBodyPart={this.filterBodyPart} />
