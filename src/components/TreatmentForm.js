@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link, Route } from 'react-router-dom'
 
 export default class TreatmentForm extends Component {
 
@@ -10,6 +11,7 @@ export default class TreatmentForm extends Component {
   }
 
   handleChange(event){
+    console.log(event.target.name)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -39,7 +41,7 @@ export default class TreatmentForm extends Component {
     console.log(this.props)
     return(
       <div>
-        <form onSubmit={this.handleSubmit} >
+        <form>
         <div className="form-group">
           <label for="symptom">Symptom</label>
           <input type='text' className="form-control" placeholder="symptom" name="symptom" value={this.state.symptom} onChange={this.handleChange}/>
@@ -54,11 +56,17 @@ export default class TreatmentForm extends Component {
         </div>
         <div className="form-group">
           <label for="bodypart">Bodypart</label>
-
-          <input type='text' className="form-control" placeholder="bodypart" name="bodypart" value={this.state.bodypart} onChange={this.handleChange}/>
+          <select name="bodypart" className="form-control" defaultValue={this.state.bodypart} onChange={this.handleChange}>
+            <option value="">All Body Parts</option>
+            <option value="Chest">Chest</option>
+            <option value="Head">Head</option>
+            <option value="Legs">Legs</option>
+            <option value="Upper limbs">Upper Limbs</option>
+            <option value="Stomach/Pelvis">Stomach / Pelvis</option>
+          </select>
         </div>
         <div className="form-group">
-          <button type='submit' className="btn btn-primary">Submit a Treatment</button>
+          <Link to='/'><button type='submit' className="btn btn-primary" onClick={this.handleSubmit} >Submit a Treatment</button></Link>
         </div>
         </form>
       </div>

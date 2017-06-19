@@ -10,11 +10,11 @@ export default function TreatmentDetail({treatment, deleteTreatment,voteMethod})
       <h2>{treatment.treatment_name}</h2>
       <p>{treatment.treatment_description}</p>
 
-      <button name="upvotes" className="btn btn-primary" onClick={() => voteMethod("upvotes",treatment)}>Upvote!</button>
+      <p className="btn btn-primary" onClick={() => voteMethod("upvotes",treatment)}>Upvote!</p>
       <p>Upvotes: {treatment.upvotes} </p>
-      <button name="downvotes" className="btn btn-primary" onClick={() => voteMethod("downvotes",treatment)}>Downvote!</button>
+      <button name="downvotes" className="btn btn-primary" onClick={(e) => voteMethod("downvotes",treatment,e)}>Downvote!</button>
       <p>Downvotes: {treatment.downvotes}</p>
-      <button className="btn btn-primary" onClick={(event) => window.location = `${treatment.id}/edit`}>Edit</button>
+      <Link to={`${treatment.id}/edit`}  className="btn btn-primary">Edit</Link>
       <br />
       <br />
       <button className="btn btn-primary" onClick={() => deleteTreatment(treatment.id) }>Delete This Treatment</button>
