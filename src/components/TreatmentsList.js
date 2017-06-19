@@ -3,7 +3,6 @@ import { Link, Route } from 'react-router-dom'
 
 
 export default function TreatmentsList(props){
-  //console.log(props)
   return(
     <div>
       <h4>Treatments</h4>

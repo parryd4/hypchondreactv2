@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Bodyparts from '../components/Bodyparts'
 import SymptomsList from '../components/SymptomsList'
+import SearchBar from '../components/SearchBar'
 import TreatmentsList from '../components/TreatmentsList'
 import TreatmentDetail from '../components/TreatmentDetail'
 import TreatmentForm from '../components/TreatmentForm'
@@ -13,6 +14,7 @@ class HealthContainer extends Component {
     super()
     this.state = {
       searchTerm: '',
+      filterTerm: '',
       allTreatments: [],
       //list
       symptoms: [],
@@ -21,7 +23,9 @@ class HealthContainer extends Component {
       bodypart: "",
       currentTreatment: {}
     }
-    this.setBodyPart = this.setBodyPart.bind(this)
+    // this.setBodyPart = this.setBodyPart.bind(this)
+    this.filterBodyPart = this.filterBodyPart.bind(this)
+    this.searchSymptom = this.searchSymptom.bind(this)
     this.showTreatments = this.showTreatments.bind(this)
     this.voteMethod = this.voteMethod.bind(this)
 
@@ -31,20 +35,45 @@ class HealthContainer extends Component {
   }
 
   componentDidMount() {
-    TreatmentsAdapter.all().then(data => this.setState({ allTreatments: data}) )
+    TreatmentsAdapter.all().then(data => {
+      var array = []
+      var repeated = false
+
+      // only list unique symptoms
+      data.forEach(d => {
+          repeated = false
+          for (let a in array )
+            { array[a].symptom === d.symptom ? repeated = true : null }
+          repeated === false ? array.push(d) : null
+        })
+
+      this.setState({ allTreatments: data, symptoms: array })
+    } )
+
+
   }
   // state management functions
-  setBodyPart(event){
-    let filteredList = this.state.allTreatments.filter( t => {
-      return t.bodypart === event.target.value
-    })
-    let symptomNamesOnly = filteredList.map( function(s){ return s.symptom })
-    this.setState({
-      symptoms: [...new Set(symptomNamesOnly)],
-      bodypart: event.target.value
-    })
-    //console.log(symptomNamesOnly)
+  // setBodyPart(event){
+  //   let filteredList = this.state.allTreatments.filter( t => {
+  //     return t.bodypart === event.target.value
+  //   })
+  //   let symptomNamesOnly = filteredList.map( function(s){ return s.symptom })
+  //   this.setState({
+  //     // symptoms: [...new Set(symptomNamesOnly)],
+  //     symptoms: [...new Set(filteredList)],
+  //     bodypart: event.target.value
+  //   })
+  //   //console.log(symptomNamesOnly)
+  // }
+
+  filterBodyPart(event) {
+    this.setState({ filterTerm: event.target.value })
   }
+
+  searchSymptom(event) {
+    this.setState({ searchTerm: event.target.value })
+  }
+
   showTreatments(event){
     let symptom = event.target.innerText
     let filteredTreatments = this.state.allTreatments.filter( t => {
@@ -59,7 +88,6 @@ class HealthContainer extends Component {
   //   })
   // }
   voteMethod(type,treatment){
-    console.log(treatment)
     treatment[type] += 1
     this.updateTreatment(treatment.id, treatment)
   }
@@ -131,17 +159,26 @@ class HealthContainer extends Component {
         </div>
 
         <div className="row"><div className="col-sm-12 border"><p></p></div></div>
-
-        <div className="row list">
-          <div id="bodyparts" className="col-sm-2">
-            <h4>Body Parts</h4>
-            <Bodyparts setBodyPart={this.setBodyPart} />
+        <div className="row">
+          <div id="symptoms" className="col-sm-5">
+            <div className="row">
+              <div className="col-sm-3">
+                <Bodyparts filterBodyPart={this.filterBodyPart} />
+              </div>
+              <div className="col-sm-2">
+                <SearchBar searchTerm={this.state.searchTerm} searchSymptom={this.searchSymptom} />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-5">
+                <SymptomsList showTreatments={this.showTreatments}
+                              allTreatments={this.state.allTreatments}
+                              symptoms={this.state.symptoms}
+                              filterTerm={this.state.filterTerm}
+                              searchTerm={this.state.searchTerm} />
+              </div>
+            </div>
           </div>
-
-          <div id="symptoms" className="col-sm-3">
-            <SymptomsList showTreatments={this.showTreatments} symptoms={this.state.symptoms} />
-          </div>
-
           <div id="treatments" className="col-sm-7">
             <TreatmentsList treatments={this.state.treatments} />
           </div>
