@@ -1,3 +1,31 @@
 .border {
-  border-bottom: 5px solid
+  border-bottom: 5px solid;
+  position: absolute;
+  top: 55%;
+}
+
+.list {
+  position: absolute;
+  top: 60%;
+}
+
+.main {
+  position: absolute;
+  top: 20%;
+}
+
+.row-centered {
+  text-align: center;
+}
+.col-centered {
+  text-align: center;
+}
+
+.ribbon {
+  background-color: #265a88;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0%;
 }

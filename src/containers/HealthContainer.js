@@ -97,19 +97,18 @@ class HealthContainer extends Component {
           })
         }
       }))
-      
+
   }
 
 
   render() {
   //  console.log(this.state.allTreatments.length)
     return (
-      <div className="main">
-        <div className="row">
-        <div className="col-sm-3" ></div>
-          <div className="col-sm-5 center-block text-center">
+      <div>
+        <div className="row main">
+            <div className="col-sm-5 col-md-offset-3 text-center">
             <Switch>
-              <Route exact path='/new' render={() => <TreatmentForm createTreatment={this.createTreatment}/>} />
+            <Route exact path='/new' render={() => <TreatmentForm createTreatment={this.createTreatment}/>} />
 
               <Route exact path='/:id' render={(routerProps) => {
                  const id = routerProps.match.params.id
@@ -125,13 +124,15 @@ class HealthContainer extends Component {
                 }
                 return <TreatmentForm treatment={treatment} updateTreatment={this.updateTreatment} />
               }} />
+
+              <Route exact path='/' render={()=> <div><strong>Welcome to HypochondReact. Please select treatment below!</strong></div>} />
             </Switch>
           </div>
         </div>
 
         <div className="row"><div className="col-sm-12 border"><p></p></div></div>
 
-        <div className="row">
+        <div className="row list">
           <div id="bodyparts" className="col-sm-2">
             <h4>Body Parts</h4>
             <Bodyparts setBodyPart={this.setBodyPart} />

@@ -6,12 +6,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="container">
-          <h2>HypochondReact</h2>
+        <div>
+          <h2 className="ribbon">HypochondReact</h2>
         </div>
 
         <HealthContainer />
-        
+
       </div>
     );
   }
