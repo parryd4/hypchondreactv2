@@ -9,10 +9,10 @@ export default function SymptomsList(props) {
       <table className="table">
       <col width="700px" />
       <col width="700px" />
-        <tr>
-          <th>Body Part</th>
-          <th>Symptoms</th>
-        </tr>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
         <tbody>
           { props.symptoms.map( (s, i) => {
             if (s.bodypart.match( props.filterTerm ) &&

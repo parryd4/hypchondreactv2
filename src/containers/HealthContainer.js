@@ -153,7 +153,7 @@ class HealthContainer extends Component {
                 return <TreatmentForm treatment={treatment} updateTreatment={this.updateTreatment} />
               }} />
 
-              <Route exact path='/' render={()=> <div style={{margin: "150px"}}><strong>Welcome to HypochondReact. Please select treatment below!</strong></div>} />
+              <Route exact path='/' render={()=> <div style={{margin: "150px"}}><strong>Welcome to HypochondReact. Please select a treatment below!</strong></div>} />
             </Switch>
           </div>
         </div>
@@ -170,7 +170,7 @@ class HealthContainer extends Component {
                 <SearchBar searchTerm={this.state.searchTerm} searchSymptom={this.searchSymptom} />
               </div>
             </div>
-            <div className="row">
+            <div id="symptoms-list" className="row">
               <div className="col-md-7">
                 <SymptomsList showTreatments={this.showTreatments}
                               allTreatments={this.state.allTreatments}

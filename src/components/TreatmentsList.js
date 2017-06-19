@@ -4,9 +4,11 @@ import { Link, Route } from 'react-router-dom'
 
 export default function TreatmentsList(props){
   return(
+
     <div>
+    <style>{"table{border:1px solid grey; background-color: #eeffff}"}</style>
       <h4>Treatments</h4>
-      <table styles="table-striped">
+      <table>
       <col width="200px"/>
       <col width="100px"/>
       <col width="100px"/>
