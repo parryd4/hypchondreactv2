@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link, Route } from 'react-router-dom'
 
 export default class TreatmentForm extends Component {
 
@@ -65,7 +66,7 @@ export default class TreatmentForm extends Component {
           </select>
         </div>
         <div className="form-group">
-          <button type='submit' className="btn btn-primary" onClick={this.handleSubmit} >Submit a Treatment</button>
+          <Link to='/'><button type='submit' className="btn btn-primary" onClick={this.handleSubmit} >Submit a Treatment</button></Link>
         </div>
         </form>
       </div>

@@ -72,7 +72,9 @@ class HealthContainer extends Component {
           allTreatments: [...previousState.allTreatments, treatment]
         }
       })
-    )}
+    )
+    .then(window.location = '/')
+  }
   deleteTreatment(id){
     TreatmentsAdapter.destroy(id)
       .then( () => {
@@ -95,6 +97,7 @@ class HealthContainer extends Component {
           })
         }
       }))
+      
   }
 
 
