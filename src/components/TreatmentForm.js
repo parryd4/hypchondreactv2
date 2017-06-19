@@ -40,11 +40,26 @@ export default class TreatmentForm extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit} >
-          <br /><input type='text' placeholder="symptom" name="symptom" value={this.state.symptom} onChange={this.handleChange}/>
-        <br />  <input type='text' placeholder="treatment_name" name="treatment_name" value={this.state.treatment_name} onChange={this.handleChange}/>
-          <br /><input type='text' placeholder="treatment_description" name="treatment_description" value={this.state.treatment_description} onChange={this.handleChange}/>
-          <br /><input type='text' placeholder="bodypart" name="bodypart" value={this.state.bodypart} onChange={this.handleChange}/>
-          <br /><input type='submit' value="Submit a Treatment" />
+        <div className="form-group">
+          <label for="symptom">Symptom</label>
+          <input type='text' className="form-control" placeholder="symptom" name="symptom" value={this.state.symptom} onChange={this.handleChange}/>
+        </div>
+        <div className="form-group">
+          <label for="treatment">Treatment</label>
+          <input type='text' className="form-control" placeholder="treatment_name" name="treatment_name" value={this.state.treatment_name} onChange={this.handleChange}/>
+        </div>
+        <div className="form-group">
+          <label for="description">Description</label>
+          <textarea className="form-control" placeholder="treatment_description" name="treatment_description" value={this.state.treatment_description} onChange={this.handleChange}></textarea>
+        </div>
+        <div className="form-group">
+          <label for="bodypart">Bodypart</label>
+
+          <input type='text' className="form-control" placeholder="bodypart" name="bodypart" value={this.state.bodypart} onChange={this.handleChange}/>
+        </div>
+        <div className="form-group">
+          <button type='submit' className="btn btn-primary">Submit a Treatment</button>
+        </div>
         </form>
       </div>
     )
