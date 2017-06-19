@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Route } from 'react-router-dom'
 
 
 export default function SymptomsList(props) {
@@ -19,7 +20,7 @@ export default function SymptomsList(props) {
               return (
                 <tr key={i}>
                   <td>{s.bodypart}</td>
-                  <td><button value={s} onClick={props.showTreatments}>{s.symptom}</button></td>
+                  <Link to="/"><td><button className="btn btn-primary" value={s} onClick={props.showTreatments}>{s.symptom}</button></td></Link>
                 </tr>
               )}
             }
