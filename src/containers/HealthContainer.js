@@ -101,18 +101,18 @@ class HealthContainer extends Component {
   render() {
   //  console.log(this.state.allTreatments.length)
     return (
-      <div>
+      <div className="main">
         <div className="row">
-          <div id="filler" className="col-sm-4"><p>I take up space</p></div>
-          <div id="col-sm-5">
+          <div className="col-sm-5">
             <Switch>
               <Route exact path='/new' render={() => <TreatmentForm createTreatment={this.createTreatment}/>} />
+
               <Route exact path='/:id' render={(routerProps) => {
                  const id = routerProps.match.params.id
                  const treatment = this.state.allTreatments.find( treatment =>  treatment.id === parseInt(id) )
-
                  return <TreatmentDetail treatment={treatment} voting={this.votingMethod} deleteTreatment={this.deleteTreatment} voteMethod={this.voteMethod}/>
               }} />
+              
               <Route exact path='/:id/edit' render={(routerProps) => {
                 const id = routerProps.match.params.id
                 const treatment = this.state.allTreatments.find( s =>  s.id === parseInt(id) )
@@ -132,16 +132,15 @@ class HealthContainer extends Component {
           </div>
 
           <div id="symptoms" className="col-sm-3">
-
             <SymptomsList showTreatments={this.showTreatments} symptoms={this.state.symptoms} />
           </div>
 
           <div id="treatments" className="col-sm-7">
-
             <TreatmentsList treatments={this.state.treatments} />
           </div>
-         </div>
+        </div>
       </div>
+
     )
   }
 }
