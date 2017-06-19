@@ -6,6 +6,8 @@ export default function SymptomsList(props) {
     <div>
       <h4></h4>
       <table className="table">
+      <col width="700px" />
+      <col width="700px" />
         <tr>
           <th>Body Part</th>
           <th>Symptoms</th>

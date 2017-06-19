@@ -6,7 +6,10 @@ export default function TreatmentsList(props){
   return(
     <div>
       <h4>Treatments</h4>
-      <table>
+      <table styles="table-striped">
+      <col width="200px"/>
+      <col width="100px"/>
+      <col width="100px"/>
         <tbody>
           <tr>
             <th>Treatment Name</th><th>Upvotes</th><th>Downvotes</th>

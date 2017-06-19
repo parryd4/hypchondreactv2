@@ -132,9 +132,9 @@ class HealthContainer extends Component {
   render() {
   //  console.log(this.state.allTreatments.length)
     return (
-      <div>
+    <div className="col-md-12 flow">
         <div className="row main">
-            <div className="col-sm-5 col-md-offset-3 text-center">
+            <div className="col-md-5 col-md-offset-3 text-center">
             <Switch>
             <Route exact path='/new' render={() => <TreatmentForm createTreatment={this.createTreatment}/>} />
 
@@ -158,19 +158,20 @@ class HealthContainer extends Component {
           </div>
         </div>
 
-        <div className="row"><div className="col-sm-12 border"><p></p></div></div>
-        <div className="row">
-          <div id="symptoms" className="col-sm-5">
+        <div className="row"><div className="col-md-12 border"><p></p></div></div>
+        <br />
+        <div className="row list">
+        <div id="symptoms" className="col-md-6 list" styles={{float : "right"}}>
             <div className="row">
-              <div className="col-sm-3">
+              <div className="col-md-3">
                 <Bodyparts filterBodyPart={this.filterBodyPart} />
               </div>
-              <div className="col-sm-2">
+              <div className="col-md-3">
                 <SearchBar searchTerm={this.state.searchTerm} searchSymptom={this.searchSymptom} />
               </div>
             </div>
             <div className="row">
-              <div className="col-sm-5">
+              <div className="col-md-7">
                 <SymptomsList showTreatments={this.showTreatments}
                               allTreatments={this.state.allTreatments}
                               symptoms={this.state.symptoms}
@@ -179,7 +180,7 @@ class HealthContainer extends Component {
               </div>
             </div>
           </div>
-          <div id="treatments" className="col-sm-7">
+          <div id="treatments" className="col-md-6">
             <TreatmentsList treatments={this.state.treatments} />
           </div>
         </div>

@@ -1,17 +1,26 @@
 .border {
   border-bottom: 5px solid;
-  position: absolute;
-  top: 55%;
+  max-height: 5vH;
+  overflow: hidden;
+}
+
+.flow {
+  overflow: hidden;
 }
 
 .list {
-  position: absolute;
-  top: 60%;
+  max-height: 45vH;
+  overflow: hidden;
+}
+
+#symptoms {
+  max-height: 45vH;
+  overflow: scroll;
 }
 
 .main {
-  position: absolute;
-  top: 20%;
+  max-height: 40vH;
+  overflow: scroll;
 }
 
 .row-centered {
@@ -26,6 +35,5 @@
   color: white;
   padding: 10px;
   width: 100%;
-  position: absolute;
-  top: 0%;
+  max-height: 10vH;
 }
