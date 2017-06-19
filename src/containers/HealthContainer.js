@@ -103,7 +103,8 @@ class HealthContainer extends Component {
     return (
       <div className="main">
         <div className="row">
-          <div className="col-sm-5">
+        <div className="col-sm-3" ></div>
+          <div className="col-sm-5 center-block text-center">
             <Switch>
               <Route exact path='/new' render={() => <TreatmentForm createTreatment={this.createTreatment}/>} />
 
@@ -112,7 +113,7 @@ class HealthContainer extends Component {
                  const treatment = this.state.allTreatments.find( treatment =>  treatment.id === parseInt(id) )
                  return <TreatmentDetail treatment={treatment} voting={this.votingMethod} deleteTreatment={this.deleteTreatment} voteMethod={this.voteMethod}/>
               }} />
-              
+
               <Route exact path='/:id/edit' render={(routerProps) => {
                 const id = routerProps.match.params.id
                 const treatment = this.state.allTreatments.find( s =>  s.id === parseInt(id) )
@@ -124,6 +125,8 @@ class HealthContainer extends Component {
             </Switch>
           </div>
         </div>
+
+        <div className="row"><div className="col-sm-12 border"><p></p></div></div>
 
         <div className="row">
           <div id="bodyparts" className="col-sm-2">

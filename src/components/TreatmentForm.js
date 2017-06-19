@@ -40,11 +40,11 @@ export default class TreatmentForm extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit} >
-          <input type='text' placeholder="symptom" name="symptom" value={this.state.symptom} onChange={this.handleChange}/>
-          <input type='text' placeholder="treatment_name" name="treatment_name" value={this.state.treatment_name} onChange={this.handleChange}/>
-          <input type='text' placeholder="treatment_description" name="treatment_description" value={this.state.treatment_description} onChange={this.handleChange}/>
-          <input type='text' placeholder="bodypart" name="bodypart" value={this.state.bodypart} onChange={this.handleChange}/>
-          <input type='submit' value="Submit a Treatment" />
+          <br /><input type='text' placeholder="symptom" name="symptom" value={this.state.symptom} onChange={this.handleChange}/>
+        <br />  <input type='text' placeholder="treatment_name" name="treatment_name" value={this.state.treatment_name} onChange={this.handleChange}/>
+          <br /><input type='text' placeholder="treatment_description" name="treatment_description" value={this.state.treatment_description} onChange={this.handleChange}/>
+          <br /><input type='text' placeholder="bodypart" name="bodypart" value={this.state.bodypart} onChange={this.handleChange}/>
+          <br /><input type='submit' value="Submit a Treatment" />
         </form>
       </div>
     )
