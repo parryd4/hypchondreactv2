@@ -5,7 +5,6 @@ export default function TreatmentDetail({treatment, deleteTreatment,voteMethod})
   if (!treatment) {
     return null
   }
-  //console.log(treatment)
   return(
     <div>
       <h2>{treatment.treatment_name}</h2>
