@@ -44,15 +44,15 @@ export default class TreatmentForm extends Component {
         <form>
         <div className="form-group">
           <label for="symptom">Symptom</label>
-          <input type='text' className="form-control" placeholder="symptom" name="symptom" value={this.state.symptom} onChange={this.handleChange}/>
+          <input type='text' className="form-control" placeholder="Symptom Name" name="symptom" value={this.state.symptom} onChange={this.handleChange}/>
         </div>
         <div className="form-group">
           <label for="treatment">Treatment</label>
-          <input type='text' className="form-control" placeholder="treatment_name" name="treatment_name" value={this.state.treatment_name} onChange={this.handleChange}/>
+          <input type='text' className="form-control" placeholder="Treatment Name" name="treatment_name" value={this.state.treatment_name} onChange={this.handleChange}/>
         </div>
         <div className="form-group">
           <label for="description">Description</label>
-          <textarea className="form-control" placeholder="treatment_description" name="treatment_description" value={this.state.treatment_description} onChange={this.handleChange}></textarea>
+          <textarea className="form-control" placeholder="Treatment Description" name="treatment_description" value={this.state.treatment_description} onChange={this.handleChange}></textarea>
         </div>
         <div className="form-group">
           <label for="bodypart">Bodypart</label>

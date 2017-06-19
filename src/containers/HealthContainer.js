@@ -47,7 +47,7 @@ class HealthContainer extends Component {
           repeated === false ? array.push(d) : null
         })
 
-      this.setState({ allTreatments: data, symptoms: array })
+      this.setState({ allTreatments: data, symptoms: array})
     } )
 
 
