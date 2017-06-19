@@ -56,7 +56,7 @@ export default class TreatmentForm extends Component {
         </div>
         <div className="form-group">
           <label for="bodypart">Bodypart</label>
-          <select name="bodypart" className="form-control" value={this.state.bodypart} selected={this.state.bodypart} onChange={this.handleChange}>
+          <select name="bodypart" className="form-control" defaultValue={this.state.bodypart} onChange={this.handleChange}>
             <option value="">All Body Parts</option>
             <option value="Chest">Chest</option>
             <option value="Head">Head</option>
