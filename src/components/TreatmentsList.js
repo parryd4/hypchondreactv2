@@ -17,7 +17,7 @@ export default function TreatmentsList(props){
           { props.treatments.map( (t, i) => <tr key={i}><td><Link to={`/${t.id}`}>{t.treatment_name}</Link></td> <td>{t.upvotes}</td><td>{t.downvotes}</td></tr>) }
         </tbody>
       </table>
-      <button className="btn btn-primary" onClick={(event) => window.location = '/new'}>Create New Treatment</button>
+      <Link to="/new"><p className="btn btn-primary">Create New Treatment</p></Link>
 
 
     </div>
